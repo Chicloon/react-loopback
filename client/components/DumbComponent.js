@@ -7,9 +7,13 @@ class DumbComponent extends Component {
 	}
 	render() {
 		return (
-			<p className="text">
-				Hello World!
-			</p>
+			<div>
+				<h1> Welcome! </h1>
+				<p className="text">
+					Hello World!!!
+				</p>
+			</div>
+
 		);
 	}
 }

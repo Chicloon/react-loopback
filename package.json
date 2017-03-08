@@ -1,5 +1,5 @@
 {
-  "name": "LoopBack-react-webpack-mobx SandBox",
+  "name": "LoopBack-react-webpack-mobx-sandbox",
   "version": "1.0.2",
   "main": "server/server.js",
   "scripts": {
@@ -37,6 +37,7 @@
     "babel-core": "^5.6.18",
     "babel-loader": "^5.1.4",
     "babel-plugin-react-transform": "^1.1.0",
+    "babel-eslint": "^6.1.2",
     "css-loader": "^0.19.0",
     "concurrently": "^0.1.1",
     "react-transform-hmr": "^1.0.0",
@@ -44,7 +45,14 @@
     "style-loader": "^0.12.4",
     "webpack": "^1.9.11",
     "webpack-dev-middleware": "^1.2.0",
-    "webpack-hot-middleware": "^2.2.0"
+    "webpack-hot-middleware": "^2.2.0",
+     "eslint": "^3.4.0",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-config-airbnb-base": "^5.0.3",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.0",
+    "eslint-plugin-react": "^6.2.0"
   },  
   "description": "Modifyed boilerplate https://github.com/tngan/loopback-redux-react-boilerplate"
 }
