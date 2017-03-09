@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import Contact from './Contact';
 import data from './data';
+import './Layout.css';
+
 
 class Layout extends Component {
 	componentWillMount() {
@@ -17,17 +19,35 @@ class Layout extends Component {
 		const newId =  contacts[contacts.length - 1].id + 1;
 		this.setState ({
 			contacts: contacts.concat ({id: newId, 
-																	name: `New contact ${newId}`, 
-																	email: `newEmail ${newId}@mail.com`})
+																	name: this.refs.name.value, 
+																	email: this.refs.email.value})
 		});
 
-		console.log('clicked');
-	};
+		this.refs.name.value = null;
+		this.refs.email.value = null;
+	}
+
+	newContact = () => {
+		return (
+			<div className="pure-g">
+				<div className="pure-u-12-24">
+					<form className="pure-form" onSubmit={this.addContact}>
+							<fieldset>
+									<legend>New contact</legend>
+									<input ref='name' type="text" placeholder="Email" />
+									<input ref='email' type="text" placeholder="Name" />
+									<button type="submit" className="pure-button pure-button-primary">Add</button>
+							</fieldset>
+					</form>
+				</div>
+			</div>
+		);
+	}
 
 	render() {
 		return (
 			<div id='Layout'>
-				<a href="#" className="pure-button" onClick={this.addContact}>Add Contact</a>				
+				{this.newContact()}					
 				<div className='pure-g'>
 					{this.state.contacts.map(info => 
 						<Contact key={info.id} {... info} />

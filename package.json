@@ -28,14 +28,14 @@
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.1.0",
     "loopback-datasource-juggler": "^2.39.0",
+    "mobx": "^2.7.0",
+    "mobx-react": "^3.5.9",
     "purecss": "^0.6.2",
     "react": "^15.3.1",
     "react-css-modules": "^3.7.10",
     "react-dom": "^15.3.1",
     "react-router": "^2.8.1",
-    "serve-favicon": "^2.0.1",
-    "mobx": "^2.6.1",
-    "mobx-react": "^3.5.8"
+    "serve-favicon": "^2.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
