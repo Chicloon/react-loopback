@@ -22,10 +22,13 @@ module.exports = {
   ],
   module: {
     loaders: [{
-      test: /\.js$/,
-      loaders: ['babel'],
+      test: /\.(js|jsx)$/,
       exclude: /node_modules/,
-      include: path.join(__dirname, 'client')
+      loader: 'babel',
+      query: {
+        presets: ['es2015', 'stage-0', 'react'],
+        plugins: ['transform-runtime', 'transform-decorators-legacy'],
+      },
     },{
       test: /\.json$/, 
       loader: 'json'

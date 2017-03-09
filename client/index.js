@@ -1,10 +1,10 @@
-// import 'babel-core/polyfill';
+import 'purecss/build/pure.css';
 
-import React from 'react'
+import React from 'react';
 import ReactDOM from 'react-dom';
-import DumbComponent from './components/DumbComponent';
+import Layout from './components/Layout';
 
 ReactDOM.render(
-  <DumbComponent />,
+  <Layout />,
   document.getElementById('root')
 );
