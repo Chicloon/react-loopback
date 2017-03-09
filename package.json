@@ -1,5 +1,5 @@
 {
-  "name": "LoopBack-react-webpack-mobx SandBox",
+  "name": "LoopBack-react-webpack-mobx-SandBox",
   "version": "1.0.2",
   "main": "server/server.js",
   "scripts": {
