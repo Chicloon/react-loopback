@@ -10,7 +10,7 @@ class DumbComponent extends Component {
 			<div>
 				<h1> Welcome! </h1>
 				<p className="text">
-					Hello World!!!!
+					Hello World!!!!!
 				</p>
 			</div>
 
