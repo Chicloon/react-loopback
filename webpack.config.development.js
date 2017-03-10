@@ -41,9 +41,9 @@ module.exports = {
       },
       
     ],
-    sassLoader: {
-      includePaths: ['./vendor'],
-    }
+    // sassLoader: {
+    //   includePaths: ['./vendor'],
+    // }
   },
 
 };
