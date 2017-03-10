@@ -1,7 +1,7 @@
 import contacts from './Contacts';
 
 const stores = {
-  contacts
+  contacts,
 };
 
 export default stores;

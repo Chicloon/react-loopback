@@ -20,4 +20,4 @@ class Contacts {
   ];
 }
 
-export default data;
+export default new Contacts();
