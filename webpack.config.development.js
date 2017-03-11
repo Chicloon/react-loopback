@@ -38,12 +38,11 @@ module.exports = {
       }, {
         test: /\.json$/,
         loader: 'json'
-      },
-      
+      },      
     ],
-    // sassLoader: {
-    //   includePaths: ['./vendor'],
-    // }
+    sassLoader: {
+    includePaths: ['./vendor']
+  }
   },
 
 };

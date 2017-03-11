@@ -1,4 +1,4 @@
-import { observable } from 'mobx';
+import { observable, action } from 'mobx';
 
 class Contacts {
   @observable all = [
@@ -18,6 +18,22 @@ class Contacts {
       email: 'bob@mail.ru'
     }
   ];
-}
 
+  @action find(contactId) {
+    return (
+      this.all.slice().filter(c => c.id === parseInt(contactId, 10))[0]
+    );
+  }
+
+  @action add (newContact) {
+    this.all.push (newContact);
+  }
+  
+  @action remove(contactId) {
+    const existing = this.all;
+    this.all = existing.filter(
+      c => c.id !== contactId
+    );    
+  }
+}
 export default new Contacts();

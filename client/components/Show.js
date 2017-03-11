@@ -1,19 +1,20 @@
 import React from 'react';
 
-import data from './data';
+import { observer } from 'mobx-react';
 
+@observer (['contacts'])
 class Show extends React.Component {
   componentWillMount() {
+    const contact = this.props.contacts.find(this.props.params.contactId);
     // передаем параменты айдишникика из роутера, как указанао в routes.js ':contactId'
-    // получаем его чезе this.props.params, которые забивает react-router
+    // получаем его чезе this.props.params, которые забивает react-router    
     this.setState ({
-      contact: data.filter(c => c.id === parseInt(this.props.params.contactId))[0],      
-      test: data
+      contact   
     });
    
   }
 
-  render() {  
+  render() {     
     return (
       <div id='Show'>     
         {this.state.contact.name}
