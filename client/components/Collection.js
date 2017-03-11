@@ -9,24 +9,20 @@ import styles from './Collection.sass';
 @observer(['contacts'])
 class Collection extends Component {
 	componentWillMount() {		
-		// this.setState({
-		// 	contacts: data,
-		// });
+		this.props.contacts.fetchAll();
 	}
 
 	addContact = (e) => {
 		e.preventDefault();
 
-		const contacts = this.props.contacts.all;
-		const newId =  contacts[contacts.length - 1].id + 1;
-	
-		this.props.contacts.add({
-			id: newId,
-			name: this.refs.name.value, 
+		this.props.contacts.add({		
+			first_name: this.refs.first_name.value, 
+			last_name: this.refs.last_name.value, 
 			email: this.refs.email.value
 		});
 
-		this.refs.name.value = null;
+		this.refs.first_name.value = null;
+		this.refs.last_name.value = null;
 		this.refs.email.value = null;
 	}
 
@@ -37,8 +33,11 @@ class Collection extends Component {
 					<form className="pure-form" onSubmit={this.addContact}>
 							<fieldset>
 									<legend>New contact</legend>
-									<input ref='name' type="text" placeholder="Email" />
-									<input ref='email' type="text" placeholder="Name" />
+
+									<input ref='email' type="text" placeholder="Email" />
+									<input ref='first_name' type="text" placeholder="First name" />
+									<input ref='last_name' type="text" placeholder="Last name" />
+
 									<button type="submit" className="pure-button pure-button-primary">Add</button>
 							</fieldset>
 					</form>

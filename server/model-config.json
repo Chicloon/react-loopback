@@ -32,7 +32,7 @@
     "dataSource": "db",
     "public": false
   },
-  "Posts": {
+  "Contacts": {
     "dataSource": "mongoDs",
     "public": true
   }

@@ -1,16 +1,20 @@
 {
-  "name": "Posts",
+  "name": "Contacts",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "author": {
+    "first_name": {
       "type": "string",
       "required": true
     },
-    "content": {
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
       "type": "string",
       "required": true
     }
