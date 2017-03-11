@@ -11,6 +11,15 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/dist/'
   },
+  devServer: {
+    hot: true,
+    inline: true,
+    colors: true,
+    historyApiFallback: true,
+  },
+  resolve:{
+    modulesDirectories: ['node_modules', 'lib', 'client', 'vendor']
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()

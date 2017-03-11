@@ -15,7 +15,7 @@ class Contact extends React.Component {
 	render() {
 		return (
 			<div className={`${styles.contact} pure-u-1-3`}>
-				<h2>
+				<h2>				
 					<Link to={`/contacts/${this.props.id}`}>
 						{this.props.first_name} {this.props.last_name}
 					</Link>

@@ -1,12 +1,15 @@
 import { observable, action } from 'mobx';
 
+import Api from 'helpers/api';
+
 class Contacts {
+  path = 'Contacts/';
   @observable all = [];
   @observable isLoading = false;
 
   @action async fetchAll() {
     this.isLoading = false;
-    const response = await fetch ('http://localhost:3000/api/Contacts');
+    const response = await Api.get(this.path);
     const status = await response.status;
    
     if (status === 200) {
@@ -22,32 +25,34 @@ class Contacts {
 
   @action async add (newContact) {
     console.log(newContact);
-    const headers = new Headers();
-    headers.append("Content-Type", "application/json");
-
-    const options = {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(newContact)
-    };
-
-    const request = new Request ('http://localhost:3000/api/Contacts', options);
-    const response = await fetch (request);
+    
+    const response = await Api.post(this.path, newContact);
     const status = await response.status;
 
     if (status === 200) {
-      this.fetchAll();
+      // this.fetchAll();
+      this.all.push(newContact);
       console.log('POST success');
     }
-
-
   }
   
-  @action remove(contactId) {
-    const existing = this.all;
-    this.all = existing.filter(
-      c => c.id !== contactId
-    );    
+  @action async remove(contactId) {
+    // const existing = this.all;
+    // this.all = existing.filter(
+    //   c => c.id !== contactId
+    // );    
+
+    const response = await Api.delete(this.path, contactId);
+    const status = await response.status;
+
+    if (status === 200) {
+      const existing = this.all;
+      this.all = existing.filter(
+        c => c.id !== contactId
+      );   
+      console.log('DELETE successful');
+    }
+
   }
 }
 export default new Contacts();
