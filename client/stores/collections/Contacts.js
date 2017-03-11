@@ -36,6 +36,7 @@ class Contacts {
     const status = await response.status;
 
     if (status === 200) {
+      this.fetchAll();
       console.log('POST success');
     }
 
